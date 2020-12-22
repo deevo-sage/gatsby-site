@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           frontmatter {
             slug
+            type
           }
         }
       }
@@ -18,12 +19,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = result.data.allMdx.nodes;
 
   posts.forEach(post => {
-    actions.createPage({
-      path: post.frontmatter.slug,
-      component: require.resolve('./src/templates/post.js'),
-      context: {
-        slug: post.frontmatter.slug,
-      },
-    });
+    if (post.frontmatter.type === 'project') {
+      actions.createPage({
+        path: post.frontmatter.slug,
+        component: require.resolve('./src/templates/project.js'),
+        context: {
+          slug: post.frontmatter.slug,
+        },
+      });
+    } else {
+      actions.createPage({
+        path: post.frontmatter.slug,
+        component: require.resolve('./src/templates/post.js'),
+        context: {
+          slug: post.frontmatter.slug,
+        },
+      });
+    }
   });
 };

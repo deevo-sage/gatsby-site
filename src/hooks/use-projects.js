@@ -1,12 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-const usePosts = () => {
+const useProjects = () => {
   const data = useStaticQuery(graphql`
     query {
       allMdx(
         limit: 12
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { type: { eq: "post" } } }
+        filter: { frontmatter: { type: { eq: "project" } } }
       ) {
         nodes {
           frontmatter {
@@ -14,9 +14,10 @@ const usePosts = () => {
             slug
             author
             topic
+            link
             image {
               sharp: childImageSharp {
-                fluid(maxWidth: 200, maxHeight: 200) {
+                fluid {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
@@ -34,6 +35,7 @@ const usePosts = () => {
     excerpt: post.excerpt,
     image: post.frontmatter.image,
     topic: post.frontmatter.topic,
+    link: post.frontmatter.link,
   }));
 };
-export default usePosts;
+export default useProjects;

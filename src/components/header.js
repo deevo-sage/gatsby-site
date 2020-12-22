@@ -149,7 +149,7 @@ const Header = () => {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
+        padding: 0.5rem calc((100vw - 750px - 0.5rem) / 2);
       `}
     >
       <NavLink to="/" fontWeight="bold">

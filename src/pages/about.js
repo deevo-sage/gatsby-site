@@ -38,7 +38,7 @@ const About = () => {
         ))}
       </div>
       <br />
-
+<Insta/>
       <Link to="/">&larr; back to home</Link>
     </Layout>
   );

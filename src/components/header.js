@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+
 const Sidenav = ({ menu, setmenu }) => {
   return (
     <div
@@ -51,6 +52,9 @@ const Sidenav = ({ menu, setmenu }) => {
           `}
         >
           <NavLink
+            cover
+            direction="up"
+            duration={1}
             to="/"
             activeClassName="current-page"
             css={css`
@@ -60,6 +64,9 @@ const Sidenav = ({ menu, setmenu }) => {
             Home
           </NavLink>
           <NavLink
+            cover
+            direction="up"
+            duration={1}
             to="/about/"
             activeClassName="current-page"
             css={css`
@@ -69,6 +76,9 @@ const Sidenav = ({ menu, setmenu }) => {
             About
           </NavLink>
           <NavLink
+            cover
+            direction="up"
+            duration={1}
             to="/contact/"
             activeClassName="current-page"
             css={css`
@@ -116,7 +126,7 @@ const Cross = () => (
     />
   </svg>
 );
-const NavLink = styled(Link)`
+const NavLink = styled(AniLink)`
   color: white;
 
   font-size: 1rem;
@@ -161,13 +171,31 @@ const Header = () => {
             margin-top: 0;
           `}
         >
-          <NavLink to="/" activeClassName="current-page">
+          <NavLink
+            cover
+            direction="up"
+            duration={1}
+            to="/"
+            activeClassName="current-page"
+          >
             Home
           </NavLink>
-          <NavLink to="/about/" activeClassName="current-page">
+          <NavLink
+            cover
+            direction="up"
+            duration={1}
+            to="/about/"
+            activeClassName="current-page"
+          >
             About
           </NavLink>
-          <NavLink to="/contact/" activeClassName="current-page">
+          <NavLink
+            cover
+            direction="up"
+            duration={1}
+            to="/contact/"
+            activeClassName="current-page"
+          >
             Contact
           </NavLink>
         </nav>
@@ -193,7 +221,7 @@ const Header = () => {
               setmenu(!menu);
             }}
           >
-           <Bars /> 
+            <Bars />
           </div>
         </nav>
       )}

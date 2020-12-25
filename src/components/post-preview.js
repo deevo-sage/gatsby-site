@@ -1,8 +1,9 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { Link } from 'gatsby';
 import ReadLink from '../components/read-link';
 import Image from 'gatsby-image';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+
 const PostPreview = ({ post }) => (
   <article
     css={css`
@@ -25,7 +26,10 @@ const PostPreview = ({ post }) => (
       }
     `}
   >
-    <Link
+    <AniLink
+      cover
+      direction="up"
+      duration={1}
       to={post.slug}
       css={css`
         margin: 0 1rem 0 0;
@@ -45,8 +49,8 @@ const PostPreview = ({ post }) => (
           
           alt={post.title}
         `}
-      ></Image>
-    </Link>
+      />
+    </AniLink>
     <div
       css={css`
         height: 50%;
@@ -77,7 +81,7 @@ const PostPreview = ({ post }) => (
           }
         `}
       >
-        <Link
+        <AniLink
           to={post.slug}
           css={css`
             width: 100%;
@@ -90,7 +94,7 @@ const PostPreview = ({ post }) => (
           `}
         >
           {post.title}
-        </Link>
+        </AniLink>
       </h4>
       <ReadLink to={post.slug}>read now &rarr;</ReadLink>
     </div>

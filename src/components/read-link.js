@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
-const ReadLink = styled(Link)`
+
+const ReadLink = styled(AniLink)`
   display: inline-block;
   font-size: 0.875rem;
   color: #0fa3b1;

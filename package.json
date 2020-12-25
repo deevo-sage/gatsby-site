@@ -29,11 +29,13 @@
     "gatsby-plugin-react-helmet": "^3.5.0",
     "gatsby-plugin-sharp": "^2.11.1",
     "gatsby-plugin-sw": "^1.0.1",
+    "gatsby-plugin-transition-link": "^1.20.5",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-remark-images": "^3.8.0",
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-source-instagram": "^0.9.0",
     "gatsby-transformer-sharp": "^2.9.0",
+    "gsap": "^3.5.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0"

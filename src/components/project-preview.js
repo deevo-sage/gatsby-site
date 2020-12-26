@@ -101,7 +101,11 @@ const ProjectPreview = ({ post }) => (
           {post.title}
         </AniLink>
       </h4>
-      <ReadLink to={'../' + post.slug}>read now &rarr;</ReadLink>
+      <ReadLink 
+       cover
+       direction="up"
+       duration={1}
+      to={'../' + post.slug}>read now &rarr;</ReadLink>
     </div>
   </article>
 );

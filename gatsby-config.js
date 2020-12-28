@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'blogsite',
-    description: 'a site we build in a full day workshop',
+    title: 'Sidharth Sahni|under construction',
+    description: 'this is under construction',
   },
   plugins: [
     'gatsby-plugin-emotion',

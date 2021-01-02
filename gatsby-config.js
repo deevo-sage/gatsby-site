@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Sidharth Sahni|under construction',
-    description: 'this is under construction',
+    title: 'Justcausetech',
+    description: 'this a blogspot built and managed by sidharth sahni',
   },
   plugins: [
     'gatsby-plugin-emotion',

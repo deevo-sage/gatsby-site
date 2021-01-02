@@ -161,7 +161,7 @@ const Header = () => {
       `}
     >
       <NavLink to="/" fontWeight="bold">
-        No Name lol
+        Justcausetech
       </NavLink>
       {ww > 550 && (
         <nav

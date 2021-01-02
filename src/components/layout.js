@@ -3,7 +3,7 @@ import { Global, css } from '@emotion/core';
 import Header from './header';
 import Helmet from 'react-helmet';
 import useSiteMetadata from '../hooks/use-sitemetadata';
-import Footer from "./footer"
+import Footer from './footer';
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
@@ -69,13 +69,13 @@ const Layout = ({ children }) => {
           @media only screen and (max-width: 550px) {
             padding-left: 4px;
             padding-right: 4px;
-            paddin-bottom:2rem;
+            paddin-bottom: 2rem;
           }
         `}
       >
         {children}
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 };

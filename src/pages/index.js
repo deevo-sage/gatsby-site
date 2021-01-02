@@ -7,12 +7,13 @@ import Hero from '../components/hero';
 
 export default () => {
   const posts = usePosts();
-  
-  return (
-    <>  <Hero />
-      <Layout>
-      
 
+  return (
+    <>
+      {' '}
+      <Hero />
+      <Layout>
+     
         <h2
           css={css`
             widht: 100%;
@@ -20,7 +21,7 @@ export default () => {
           `}
         >
           {' '}
-          Read my blog
+          🙃 Read my blogs 🙃
         </h2>
         <div
           css={css`

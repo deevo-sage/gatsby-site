@@ -1,25 +1,40 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import {css} from "@emotion/core"
+import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import Insta from '../components/insta';
 import useProjects from '../hooks/use-projects';
 import ProjectPreview from '../components/project-preview';
+import ReadLink, { Styleda } from '../components/read-link';
 const About = () => {
-  const projects=useProjects();
+  const projects = useProjects();
   return (
     <Layout>
-      <h1>About Me</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-        
+      <p
+        css={css`
+          font-size: 0.7em;
+          color: gray;
+        `}
+      >
+        This is not supposed to be a portfolio website. All the details are
+        mentioned here until i finish working on the *Portfolio Site*.
       </p>
+      <h1>About Me 👨‍🎓</h1>
+      <p>
+        I'm Sidharth Sahni, a self-taught web and app developer working with React and
+        React-native for the front-end and Firebase for the backend. Currently,
+        I'm a second Year student at{' '}
+       <Styleda
+          href="http://bpitindia.com/"
+          css={css`
+            text-decoration: none;
+          `}
+        >
+          Bhagwan Parshuram Institute of Technology
+        </Styleda>{' '}
+        while also learning and working with various new frameworks and
+        technologies in my free time.
+      </p>
+
       <h1>My Past Projects</h1>
       <div
         css={css`
@@ -38,8 +53,9 @@ const About = () => {
         ))}
       </div>
       <br />
-<Insta/>
-      <Link to="/">&larr; back to home</Link>
+      <ReadLink cover direction="up" duration={1} to="/">
+        &larr; back to home
+      </ReadLink>
     </Layout>
   );
 };

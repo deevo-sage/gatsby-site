@@ -51,10 +51,10 @@ const Hero = () => {
   return (
     <ImageBackground Tag="div" fluid={image.sharp.fluid} fadeIn="soft">
       <Textbox>
-        <h1>Gatsby Blog &hearts;</h1>
+        <h1>Suggest me a name amigos</h1>
         <p>
           {' '}
-          hello everyone <Link to="/about/">learn more about me &rarr;</Link>
+I'm really bad with names 😔😔
         </p>
       </Textbox>
     </ImageBackground>

@@ -82,9 +82,6 @@ const PostPreview = ({ post }) => (
         `}
       >
         <AniLink
-         cover
-         direction="up"
-         duration={1}
           to={post.slug}
           css={css`
             width: 100%;
@@ -99,10 +96,7 @@ const PostPreview = ({ post }) => (
           {post.title}
         </AniLink>
       </h4>
-      <ReadLink
-       cover
-       direction="up"
-       duration={1} to={post.slug}>read now &rarr;</ReadLink>
+      <ReadLink to={post.slug}>read now &rarr;</ReadLink>
     </div>
   </article>
 );

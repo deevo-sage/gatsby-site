@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import {css } from '@emotion/core'
+import { css } from '@emotion/core';
 import Layout from '../components/layout';
-import ReadLink,{Styleda} from '../components/read-link';
+import ReadLink, { Styleda } from '../components/read-link';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 export const query = graphql`
   query($slug: String!) {
@@ -17,12 +17,12 @@ export const query = graphql`
   }
 `;
 
-const ProjectTemplate = ({ data: {mdx:post} }) => {
+const ProjectTemplate = ({ data: { mdx: post } }) => {
   return (
     <Layout>
       <h1>{post.frontmatter.title}</h1>
       <p style={{ fontSize: '0.75rem' }}>Posted by {post.frontmatter.author}</p>
-      <Styleda
+      {/* <Styleda
         href={post.frontmatter.link}
         css={css`
           display: inline-block;
@@ -34,10 +34,12 @@ const ProjectTemplate = ({ data: {mdx:post} }) => {
         `}
       >
         Visit the Project &rarr;
-      </Styleda>
+      </Styleda> */}
       <MDXRenderer>{post.body}</MDXRenderer>
 
-      <ReadLink to="/about">&larr; back to about</ReadLink>
+      <ReadLink cover direction="up" duration={1} to="/about/">
+        &larr; back to about
+      </ReadLink>
     </Layout>
   );
 };

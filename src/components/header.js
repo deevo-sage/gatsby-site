@@ -67,6 +67,7 @@ const Sidenav = ({ menu, setmenu }) => {
             cover
             direction="up"
             duration={1}
+            Contact
             to="/about/"
             activeClassName="current-page"
             css={css`
@@ -75,17 +76,14 @@ const Sidenav = ({ menu, setmenu }) => {
           >
             About
           </NavLink>
-          <NavLink
-            cover
-            direction="up"
-            duration={1}
-            to="/contact/"
-            activeClassName="current-page"
-            css={css`
-              margin: 10px;
-            `}
-          >
-            Contact
+          <NavLink>
+            <text
+              onClick={() => {
+                window.open(`mailto:sidsahni00@gmail.com`);
+              }}
+            >
+              Email
+            </text>
           </NavLink>
         </nav>
       </div>
@@ -163,7 +161,7 @@ const Header = () => {
       `}
     >
       <NavLink to="/" fontWeight="bold">
-        Practice Blogspot
+        No Name lol
       </NavLink>
       {ww > 550 && (
         <nav
@@ -189,15 +187,15 @@ const Header = () => {
           >
             About
           </NavLink>
-          <NavLink
-            cover
-            direction="up"
-            duration={1}
-            to="/contact/"
-            activeClassName="current-page"
-          >
-            Contact
-          </NavLink>
+          <NavLink>
+            <text
+              onClick={() => {
+                window.open(`mailto:sidsahni00@gmail.com`);
+              }}
+            >
+              Email
+            </text>
+          </NavLink>  
         </nav>
       )}
       {ww < 550 && (

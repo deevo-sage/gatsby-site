@@ -28,10 +28,11 @@ const ProjectTemplate = ({ data: { mdx: post } }) => {
           display: inline-block;
           font-size: 0.875rem;
           color: #0fa3b1;
-          :visited {
+          :visited {  
             color: #8b3e98;
           }
         `}
+        
       >
         Visit the Project &rarr;
       </Styleda> */}

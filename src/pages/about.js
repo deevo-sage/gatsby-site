@@ -5,6 +5,8 @@ import Insta from '../components/insta';
 import useProjects from '../hooks/use-projects';
 import ProjectPreview from '../components/project-preview';
 import ReadLink, { Styleda } from '../components/read-link';
+import { Tween } from 'react-gsap';
+
 const About = () => {
   const projects = useProjects();
   return (
@@ -20,10 +22,10 @@ const About = () => {
       </p>
       <h1>About Me 👨‍🎓</h1>
       <p>
-        I'm Sidharth Sahni, a self-taught web and app developer working with React and
-        React-native for the front-end and Firebase for the backend. Currently,
-        I'm a second Year student at{' '}
-       <Styleda
+        I'm Sidharth Sahni, a self-taught web and app developer working with
+        React and React-native for the front-end and Firebase for the backend.
+        Currently, I'm a second Year student at{' '}
+        <Styleda
           href="http://bpitindia.com/"
           css={css`
             text-decoration: none;
@@ -48,9 +50,38 @@ const About = () => {
           width: 100%;
         `}
       >
-        {projects.map(project => (
-          <ProjectPreview post={project} />
-        ))}
+        {' '}
+        <Tween
+          from={{ x: '100px', y: '100px', opacity: 0 }}
+          duration={0.7}
+          stagger={0.3}
+          playState="true"
+        >
+          {projects.map(project => (
+            <div
+              css={css`
+                margin: 0;
+                padding: 0;
+                min-height: 250px;
+                width: 30%;
+
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+                @media only screen and (min-width: 550px) {
+                  margin-right: 3.3%;
+                }
+                @media only screen and (max-width: 550px) {
+                  min-height: 33vh;
+                  width: 80%;
+                  box-shadow: 2.75px 2.75px 6px #000000;
+                }
+              `}
+              key={project.slug}
+            >
+              <ProjectPreview post={project} />
+            </div>
+          ))}
+        </Tween>
       </div>
       <br />
       <ReadLink cover direction="up" duration={1} to="/">

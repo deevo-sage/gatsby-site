@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Background from 'gatsby-background-image';
 const ImageBackground = styled(Background)`
   background-position: top 20% center;
@@ -29,6 +29,7 @@ const Textbox = styled('div')`
   h1 {
     text-shadow: 1px 1px 3px #eeddff66;
     font-size: 2.25rem;
+    color:black;
   }
   p,
   a {
@@ -51,11 +52,8 @@ const Hero = () => {
   return (
     <ImageBackground Tag="div" fluid={image.sharp.fluid} fadeIn="soft">
       <Textbox>
-        <h1>Suggest me a name amigos</h1>
-        <p>
-          {' '}
-I'm really bad with names 😔😔
-        </p>
+        <h1>Welcome to my blogsite</h1>
+        <p> idk what i would be writing about tho 😔😔 </p>
       </Textbox>
     </ImageBackground>
   );

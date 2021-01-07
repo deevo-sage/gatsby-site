@@ -8,36 +8,34 @@ topic: Creating your first react app
 type: post  
 ---
 
-![react header](./images/react-1.png)
-<br/>
 <div class="Mdxcontainer">
 
----
+  
+<div class="youtube">
 
-Youtube Video coming soon
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XtV51U05j5Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
----
+</div>
+
 
 ## pre-requisites
 
-<a href="" class="read-link"></a>
-
 - Basic knowledge of HTML, CSS, and Javascript
-- <a href="https://nodejs.org/en/download/" class="read-link">node</a> or <a href="https://classic.yarnpkg.com/en/docs/install/#windows-stable" class="read-link">yarn</a> installed on device
+- <a href="https://nodejs.org/en/download/" class="read-link">node</a> and/or <a href="https://classic.yarnpkg.com/en/docs/install/#windows-stable" class="read-link">yarn</a> installed on the device
 - <a href="https://code.visualstudio.com/Download" class="read-link">VS Code</a> or any other IDE of your choice
 
 ## installing modules
 
-For running a React apps we need react itself, react-dom which is the react document object model, and a bundler, we can use any bundler but for tutorial this we would be using react-scripts which is the bundler provided in the default react app.
+For running a React app we need react itself, react-dom which is the react document object model, and a bundler, we can use any bundler but for the tutorial, we would be using react-scripts which is the bundler provided in the default react app.
 
-we can continue in 2 ways, we can either run 
+we can continue in 2 ways, we can either run
 <br/>
 
 <div class="code-block">
 
 ``` shell
 
-  npx create-react-app my-first-react-app
+  npx create-react-app first-react
 
 ```
 
@@ -82,8 +80,7 @@ this would create the default react app which would look like the following pict
 
 <br/>
 
- for starting with a completely blank folder i would go with the later. You can also copy these node script and paste it in your package.json then your package.json would look somewhat like
-
+ for starting with a completely blank folder I would go with the latter. You can also copy these scripts and paste them into your package.json then your package.json would look somewhat like
 <br/>
 
 <div class="code-block">
@@ -93,7 +90,7 @@ this would create the default react app which would look like the following pict
   "name": "first-react",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -119,9 +116,9 @@ this would create the default react app which would look like the following pict
 
 ## setting up the folder
 
-Minimum requirement for running a react app is a **src** folder containing an index.js and a **public** containing an index.html file. we can also add a favicon ,images or a manifest.json to the public folder
+The minimum requirement for running a react app is a **src** folder containing an App.js and a **public** containing an index.html file. we can also add a favicon, images, or a manifest.json to the public folder.
 
-first we would create our public folder and add the index.html inside it.
+first, we would create our public folder and add the index.html inside it
 <br/>
 
 <div class="code-block">
@@ -144,9 +141,9 @@ first we would create our public folder and add the index.html inside it.
 </div>
 
 <br/>
-Reacts need a div tag to render our app inside of. whatever is written inside the div is displayed when the app is not rendered and would be over written if the app is rendered.
+React need a div tag to render our app inside of. whatever is written inside the div is displayed when the app is not rendered and would be overwritten if the app is rendered.
 
-now we would create index.js in the src folder. firstly you need to import React and render function.
+now we would create App.js in the src folder. firstly you need to import React and render function.
 <br/>
 
 <div class="code-block">
@@ -161,7 +158,7 @@ import {render} from 'react-dom'
 
 <br/>
 
-You only need the render function from react-dom so you would implicitly import it.
+We only need the render function from react-dom so we would implicitly import it.
 
 ## The 2 types of components 
 
@@ -171,7 +168,7 @@ there are 2 ways in which you can create a react component
 
 ### Class component
 
-it is a class which inherit from react class known as component which already exists in React. components can render with a function inside React called createElement or we can write JSX aka Javascript XML where the later is preferred due to ease in workflow. Here is a basic class component
+it is a class that inherits from react class known as a component that already exists in **React**. components can render with a function inside React called createElement or we can write JSX aka Javascript XML where the latter is preferred due to ease in the workflow. Here is a basic class component
 
 <br/>
 
@@ -192,7 +189,7 @@ class App extends React.Component {
 
 ### Functional component
 
-After the hooks becoming a stable api functional components are usually preffered over class components, but both have their own pros and cons. It is essentially a function that is returning JSX. Here is a basic functional component 
+After the hooks becoming stable API functional components are usually preferred over class components, but both have their own pros and cons. It is essentially a function that is returning JSX. Here is a basic functional component 
 
 <br/>
 
@@ -235,7 +232,7 @@ To render the components we would use the render function which we imported earl
 
 ``` React
 
-render(component,element to be rendered in)
+render(component,element to render in)
 
 ```
 </div>

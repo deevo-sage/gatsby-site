@@ -189,12 +189,20 @@ const Layout = ({ children }) => {
           padding-left:0.3rem;
           padding-right:0.3rem;
           font-size:0.8rem;
-
+             word-wrap: break-word;      /* IE 5.5-7 */
+         white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+      white-space: pre-wrap;   
           }
           .Mdxcontainer{
             padding-left:0.3rem;
             padding-right:0.3rem;
 
+          }
+          .youtube{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width:100%;
           }
         `}
       />

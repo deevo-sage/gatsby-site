@@ -25,7 +25,9 @@ const PostTemplate = ({ data: {mdx:post} }) => {
       </p>
       <MDXRenderer>{post.body}</MDXRenderer>
 
-      <ReadLink to="/">&larr; back to posts</ReadLink>
+      <ReadLink cover direction="up" duration={1} to="/">
+        &larr; back to posts
+      </ReadLink>
     </Layout>
   );
 };

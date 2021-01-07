@@ -6,10 +6,7 @@ import useSiteMetadata from '../hooks/use-sitemetadata';
 import Footer from './footer';
 import Theme from '../contexts/theme';
 const Layout = ({ children }) => {
-  const colormode = 'light';
-  if (typeof window !== `undefined`)
-    colormode = window.localStorage.getItem('color-mode');
-
+  let colormode = 'light';
   const { title, description } = useSiteMetadata();
   const [themeval, setthemeval] = useState(colormode);
   const [color, setcolor] = useState('white');
@@ -28,6 +25,7 @@ const Layout = ({ children }) => {
   }, [themeval]);
   useEffect(() => {
     if (typeof window !== `undefined`) {
+    colormode = window.localStorage.getItem('color-mode');
       if (window.localStorage.getItem('color-mode')) {
       } else setColorMode('light');
     }

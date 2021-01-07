@@ -26,7 +26,8 @@ const Layout = ({ children }) => {
   useEffect(() => {
     if (typeof window !== `undefined`) {
     colormode = window.localStorage.getItem('color-mode');
-      if (window.localStorage.getItem('color-mode')) {
+      if (colormode==='dark') {
+        setColorMode('dark');
       } else setColorMode('light');
     }
   }, []);
@@ -166,7 +167,14 @@ const Layout = ({ children }) => {
               margin-top: 0.5rem;
             }
           }
-
+.read-link{
+    display: inline-block;
+  font-size: 0.875rem;
+  color: #0fa3b1;
+  :visited {
+    color: #8b3e98;
+  }
+}
           strong {
             color:${textcolor};
           }
@@ -180,6 +188,7 @@ const Layout = ({ children }) => {
           color:black;
           padding-left:0.3rem;
           padding-right:0.3rem;
+          font-size:0.8rem;
 
           }
           .Mdxcontainer{

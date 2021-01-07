@@ -6,24 +6,31 @@ import useSiteMetadata from '../hooks/use-sitemetadata';
 import Footer from './footer';
 import Theme from '../contexts/theme';
 const Layout = ({ children }) => {
+  const colormode = 'light';
+  if (typeof window !== `undefined`)
+    colormode = window.localStorage.getItem('color-mode');
+
   const { title, description } = useSiteMetadata();
-  const [themeval, setthemeval] = useState(
-    window.localStorage.getItem('color-mode'),
-  );
+  const [themeval, setthemeval] = useState(colormode);
   const [color, setcolor] = useState('white');
   const [textcolor, settextcolor] = useState('black');
-  var currenturl = window.location.href;
+  let currenturl = '';
+  if (typeof window !== `undefined`) currenturl = window.location.href;
+
   const setColorMode = value => {
     setthemeval(value);
-    window.localStorage.setItem('color-mode', value);
+    if (typeof window !== `undefined`)
+      window.localStorage.setItem('color-mode', value);
   };
   useEffect(() => {
     themeval === 'light' ? setcolor('#f7f7f7') : setcolor('#303633');
     themeval === 'light' ? settextcolor('#2D353C') : settextcolor('#c9c9db');
   }, [themeval]);
   useEffect(() => {
-    if (window.localStorage.getItem('color-mode')) {
-    } else setColorMode('light');
+    if (typeof window !== `undefined`) {
+      if (window.localStorage.getItem('color-mode')) {
+      } else setColorMode('light');
+    }
   }, []);
   const Twitter = () => (
     <svg
@@ -236,7 +243,8 @@ const Layout = ({ children }) => {
                   var Url = document.querySelector('#url').select();
 
                   document.execCommand('Copy');
-                  window.alert('URL: ' + currenturl + ' copied');
+                  if (typeof window !== `undefined`)
+                    window.alert('URL: ' + currenturl + ' copied');
                 }}
               >
                 <textarea
@@ -258,9 +266,10 @@ const Layout = ({ children }) => {
 
               <span
                 onClick={() => {
-                  window.open(
-                    `https://twitter.com/intent/tweet?url=${currenturl}&text=here is an interesting blog I found`,
-                  );
+                  if (typeof window !== `undefined`)
+                    window.open(
+                      `https://twitter.com/intent/tweet?url=${currenturl}&text=here is an interesting blog I found`,
+                    );
                 }}
               >
                 <Twitter />

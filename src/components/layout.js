@@ -212,7 +212,7 @@ max-width:550px;
       />
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
+        <title>{title}</title>  
         <meta name="description" content={description} />
         <script
           data-ad-client="ca-pub-3445418722858710"

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Justcausetech',
-    description: 'this a blogspot built and managed by sidharth sahni',
+    description: "This a blogspot built and managed by sidharth sahni.",
   },
   plugins: [
     'gatsby-plugin-emotion',

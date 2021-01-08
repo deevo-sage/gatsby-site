@@ -204,6 +204,10 @@ const Layout = ({ children }) => {
             align-items:center;
             width:100%;
           }
+          .youtube-vid{
+width:100%;
+max-width:550px;  
+          }
         `}
       />
       <Helmet>

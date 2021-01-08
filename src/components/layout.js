@@ -214,6 +214,11 @@ max-width:550px;
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <script
+          data-ad-client="ca-pub-3445418722858710"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
       </Helmet>
       <Theme.Provider value={[themeval, setthemeval]}>
         <Header />

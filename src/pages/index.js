@@ -1,13 +1,17 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import usePosts from '../hooks/use-posts';
 import PostPreview from '../components/post-preview';
 import Hero from '../components/hero';
 import { Tween } from 'react-gsap';
+import analytics from '../components/fireanalytics';
+
 export default () => {
   const posts = usePosts();
-
+useEffect(() => {
+  analytics('visited_blogspage');
+}, []);
   return (
     <>
       {' '}
@@ -20,7 +24,13 @@ export default () => {
           `}
         >
           {' '}
-          🙃 Read my blogs 🙃
+          <span role="img" aria-label="upsidedownface">
+            🙃
+          </span>{' '}
+          Read my blogs{' '}
+          <span role="img" aria-label="upsidedownface">
+            🙃
+          </span>
         </h2>
         <div
           css={css`

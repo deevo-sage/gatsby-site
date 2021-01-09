@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
-import { css } from '@emotion/core';
 import Layout from '../components/layout';
-import ReadLink, { Styleda } from '../components/read-link';
+import ReadLink from '../components/read-link';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import analytics from '../components/fireanalytics';
+
 export const query = graphql`
   query($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
@@ -13,11 +14,14 @@ export const query = graphql`
         link
       }
       body
-    }
+    } 
   }
 `;
 
 const ProjectTemplate = ({ data: { mdx: post } }) => {
+  useEffect(() => {
+    analytics('visited_'+post.frontmatter.title);
+  },);
   return (
     <Layout>
       <h1>{post.frontmatter.title}</h1>

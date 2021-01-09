@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import { css } from '@emotion/core';
 import ReadLink from '../components/read-link';
 import Image from 'gatsby-image';

@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
-import Insta from '../components/insta';
 import useProjects from '../hooks/use-projects';
 import ProjectPreview from '../components/project-preview';
 import ReadLink, { Styleda } from '../components/read-link';
 import { Tween } from 'react-gsap';
+import analytics from '../components/fireanalytics';
 
 const About = () => {
+  useEffect(() => {
+    analytics('visited_about_us');
+  }, []);
   const projects = useProjects();
   return (
     <Layout>
@@ -20,7 +23,12 @@ const About = () => {
         This is not supposed to be a portfolio website. All the details are
         mentioned here until i finish working on the *Portfolio Site*.
       </p>
-      <h1>About Me 👨‍🎓</h1>
+      <h1>
+        About Me
+        <span role="img" aria-label="student">
+          👨‍🎓
+        </span>
+      </h1>
       <p>
         I'm Sidharth Sahni, a self-taught web and app developer working with
         React and React-native for the front-end and Firebase for the backend.

@@ -1,12 +1,10 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import { css } from '@emotion/core';
 import ReadLink from './read-link';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Image from 'gatsby-image';
-import Themecontext from '../contexts/theme';
 
 const ProjectPreview = ({ post }) => {
-const [theme, settheme] = useContext(Themecontext);
   return (
     <article
       css={css`

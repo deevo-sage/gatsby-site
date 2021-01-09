@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
-import { Controls, PlayState, Tween } from 'react-gsap';
 import Themecontext from '../contexts/theme';
 
 const Header = () => {
@@ -50,21 +49,7 @@ const Header = () => {
           >
             About me
           </NavLink>
-          <NavLink>
-            <text
-              onClick={() => {
-                window.open(`mailto:sidsahni00@gmail.com`);
-              }}
-            >
-              Email me
-            </text>
-          </NavLink>
-          <NavLink
-            css={css`
-              display: inline-flex;
-              justify-content: center;
-            `}
-          ></NavLink>
+         
         </nav>
       )}
       {ww < 550 && (
@@ -89,8 +74,8 @@ const Header = () => {
               else settheme('dark');
             }}
           >
-            {theme == 'dark' && <Sun />}
-            {theme == 'light' && <Moon />}
+            {theme === 'dark' && <Sun />}
+            {theme === 'light' && <Moon />}
           </div>
           <div
             to="/"
@@ -238,15 +223,7 @@ const Sidenav = ({ menu, setmenu }) => {
           >
             About me
           </NavLink>
-          <NavLink>
-            <text
-              onClick={() => {
-                window.open(`mailto:sidsahni00@gmail.com`);
-              }}
-            >
-              Email me
-            </text>
-          </NavLink>
+        
         </nav>
       </div>
     </div>

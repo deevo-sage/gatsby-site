@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import analytics from '../components/fireanalytics';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import ReadLink from '../components/read-link';
@@ -17,6 +18,9 @@ export const query = graphql`
 `;
 
 const PostTemplate = ({ data: {mdx:post} }) => {
+    useEffect(() => {
+      analytics('visited_' + post.frontmatter.title);
+    });
   return (
     <Layout>
       <h1>{post.frontmatter.title}</h1>

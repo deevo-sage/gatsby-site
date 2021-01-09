@@ -6,9 +6,8 @@ import useSiteMetadata from '../hooks/use-sitemetadata';
 import Footer from './footer';
 import Theme from '../contexts/theme';
 const Layout = ({ children }) => {
-  let colormode = 'light';
   const { title, description } = useSiteMetadata();
-  const [themeval, setthemeval] = useState(colormode);
+  const [themeval, setthemeval] = useState('');
   const [color, setcolor] = useState('white');
   const [textcolor, settextcolor] = useState('black');
   let currenturl = '';
@@ -25,11 +24,10 @@ const Layout = ({ children }) => {
   }, [themeval]);
   useEffect(() => {
     if (typeof window !== `undefined`) {
-    colormode = window.localStorage.getItem('color-mode');
-      if (colormode==='dark') {
+      if (window.localStorage.getItem('color-mode') === 'dark') {
         setColorMode('dark');
       } else setColorMode('light');
-    }
+    } else setColorMode('light');
   }, []);
   const Twitter = () => (
     <svg
@@ -213,7 +211,7 @@ max-width:550px;
       />
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>  
+        <title>{title}</title>
         <meta name="description" content={description} />
         <script
           data-ad-client="ca-pub-3445418722858710"
@@ -265,7 +263,6 @@ max-width:550px;
             >
               <span
                 onClick={() => {
-                  var Url = document.querySelector('#url').select();
 
                   document.execCommand('Copy');
                   if (typeof window !== `undefined`)
@@ -305,7 +302,7 @@ max-width:550px;
                   else setColorMode('dark');
                 }}
               >
-                {themeval == 'dark' ? <Sun /> : <Moon />}
+                {themeval === 'dark' ? <Sun /> : <Moon />}
               </span>
             </div>
           </aside>

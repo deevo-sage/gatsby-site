@@ -6,7 +6,8 @@ import PostPreview from '../components/post-preview';
 import Hero from '../components/hero';
 import { Tween } from 'react-gsap';
 import analytics from '../components/fireanalytics';
-
+import Helmet from 'react-helmet';
+ 
 export default () => {
   const posts = usePosts();
 useEffect(() => {
@@ -14,7 +15,14 @@ useEffect(() => {
 }, []);
   return (
     <>
-      {' '}
+      <Helmet>
+        <title>sidharth sahni's blogspot</title>
+        <meta
+          name="description"
+          content="main display page for all the blogs i've written."
+        />
+      </Helmet>
+ 
       <Hero />
       <Layout>
         <h2

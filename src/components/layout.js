@@ -167,6 +167,7 @@ const Layout = ({ children }) => {
               margin-top: 0.5rem;
             }
           }
+
 .read-link{
     display: inline-block;
   font-size: 0.875rem;

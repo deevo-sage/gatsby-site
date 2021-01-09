@@ -73,7 +73,7 @@ module.exports = {
         disable: !process.env.ANALYZE_BUNDLE_SIZE,
         generateStatsFile: true,
         analyzerMode: 'static',
-      },
+      },  
     },
     `gatsby-plugin-offline`,
   ],

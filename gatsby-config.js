@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Justcausetech',
-    description: "This a blogspot built and managed by sidharth sahni.",
+    description: 'This a blogspot built and managed by sidharth sahni.',
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -15,20 +15,20 @@ module.exports = {
         username: '6799361946',
       },
     },
-   
+
     {
-      resolve: "gatsby-plugin-firebase",
+      resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
-       apiKey: "AIzaSyB-1MHyDEhCFwfW268-SekKpUpNhFTKo5U",
-    authDomain: "gastby-blog.firebaseapp.com",
-    projectId: "gastby-blog",
-    storageBucket: "gastby-blog.appspot.com",
-    messagingSenderId: "551707735496",
-    appId: "1:551707735496:web:2b0e0e85f52f45201fbcfd",
-    measurementId: "G-LL839B0P2R"
-        }
-      }
+          apiKey: 'AIzaSyB-1MHyDEhCFwfW268-SekKpUpNhFTKo5U',
+          authDomain: 'gastby-blog.firebaseapp.com',
+          projectId: 'gastby-blog',
+          storageBucket: 'gastby-blog.appspot.com',
+          messagingSenderId: '551707735496',
+          appId: '1:551707735496:web:2b0e0e85f52f45201fbcfd',
+          measurementId: 'G-LL839B0P2R',
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -66,6 +66,7 @@ module.exports = {
         icon: `static/favicon.png`,
       },
     },
+
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
@@ -73,7 +74,7 @@ module.exports = {
         disable: !process.env.ANALYZE_BUNDLE_SIZE,
         generateStatsFile: true,
         analyzerMode: 'static',
-      },  
+      },
     },
     `gatsby-plugin-offline`,
   ],

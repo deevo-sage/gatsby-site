@@ -1,0 +1,265 @@
+---
+title: Starting to use States with useState
+slug: Starting-to-use-States-with-useState
+author: sidharth sahni
+image: ./images/code.png
+topic: React basics
+date: '2021-01-11'
+description: React tutorial 2 - Starting to use States withState 
+type: post  
+next: none
+prev: none
+---
+import AniLink from "../../../src/components/read-link.js";
+
+<div class="Mdxcontainer">
+
+<AniLink cover direction="up" duration={1} to="/creating-your-first-react-app">&larr;previous tutorial</AniLink>
+
+<br/>
+<br/>
+
+---
+
+Youtube video coming soon
+
+---
+
+<br/>
+
+Get the code done till now <a href="https://github.com/deevo-sage/React-basics/tree/React-tutorial-1" class="read-link">here</a>
+
+<br/>
+
+## Crux
+
+- making file and exporting
+- adding form 
+- adding state to form 
+
+## Making a functional component in another file and exporting
+
+Let's just start with making a new file called form.js ,import React, and make a basic functional component.
+<br/>
+
+<div class="code-block">
+
+``` Javascript
+
+import React from "react"
+
+const Form =()=>{
+return(<></>);
+}
+
+```
+
+</div>
+
+<br/>
+
+I usually use template tag( <></> ) for initializing to avoid unnecessary divs
+
+We can export a component just like anyother function or object in Javascript aka by using export. So let's export the function at the end.
+
+<br/>
+
+<div class="code-block">
+
+``` Javascript 
+
+import React from "react"
+
+const Form =()=>{
+return(<></>);
+}
+
+export default Form;
+
+```
+
+</div>
+
+<br/>
+
+no lets import it in our index.js assuming the form.js is in same folder we can import with the following code
+
+<br/>
+
+<div class="code-block">
+
+``` Javascript 
+
+/*index.js*/
+import Form from "./form";
+
+```
+
+</div>
+
+<br/>
+
+### What is state
+
+The heart of every React component is its “state”, an object that determines how that component renders & behaves. In other words, “state” is what allows you to create components that are dynamic and interactive by re-rendering the component everytime the "state" changes.
+
+### What is useState()
+
+The useState() is a Hook that allows you to have state variables in functional components.it's syntax is 
+
+<br/>
+
+<div class="code-block">
+
+``` Javascript 
+
+const [state,setState]=useState(initial)
+
+```
+
+</div>
+
+<br/>
+
+## Making Form and adding state
+
+We'll make a simple login form with 2 input elements, 1 for email and 1 for password.
+
+<br/>
+
+<div class="code-block">
+
+``` Javascript 
+
+const Form =()=>{
+  return(<>
+<input placeholder="email">
+</input>
+<input placeholder="password">
+</input>
+</>);
+}
+
+```
+
+</div>
+
+<br/>
+
+Now for adding state in a functional component we would need to import useState from react, so let's import and add a state named email in the component 
+
+
+<br/>
+
+<div class="code-block">
+
+``` Javascript 
+
+import React,{useState} from "react";
+
+const Form =()=>{
+const [email,setemail] = useState("");
+return(<>
+<input placeholder="email">
+</input>
+<input placeholder="password">
+</input>
+</>);
+}
+
+export default Form;
+
+```
+
+</div>
+
+<br/>
+
+now we also need to create an onChange function on email so that everytime something is added to the email input box vakue of our state also changes.
+**note that we make the type of variable is const as we should not be able to change state from anywhere other than the setemail function** 
+
+
+<br/>
+
+<div class="code-block">
+
+``` Javascript 
+
+const Form =()=>{
+const [email,setemail] = useState("");
+return(<>
+<input placeholder="email" 
+value={email}
+onChange={e=>setemail(e.target.value)}>
+</input>
+<input placeholder="password">
+</input>
+</>);
+}
+
+```
+
+</div>
+
+<br/>
+
+lets repeat the steps for password as well.
+
+
+<br/>
+
+<div class="code-block">
+
+``` Javascript 
+
+const Form =()=>{
+  const [email,setemail] = useState("");
+  const [password,setpassword] = useState("");
+
+  return(<>
+<input placeholder="email" 
+value={email}
+onChange={e=>setemail(e.target.value)}>
+</input>
+<input placeholder="password" 
+value={password} 
+onChange={e=>setpassword(e.target.value)}>
+</input>
+</>);
+}
+
+```
+
+</div>
+
+<br/>
+
+now we can test the re-rendering by adding the a console.log anywhere inside the component. Lets add the log to show the current value of email and password.
+
+<br/>
+
+<div class="code-block">
+
+``` Javascript 
+  return(<>
+{console.log({email,password})}
+<input placeholder="email" 
+value={email}
+onChange={e=>setemail(e.target.value)}>
+</input>
+<input placeholder="password" 
+value={password} 
+onChange={e=>setpassword(e.target.value)}>
+</input>
+</>);
+}
+
+```
+
+</div>
+
+<br/>
+
+If you've followed correctly till now you've successfully created your first react app 🎉🎊🎉
+
+</div>

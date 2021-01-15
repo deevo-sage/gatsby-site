@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Global, css } from '@emotion/core';
 import Header from './header';
 import Helmet from 'react-helmet';
-import useSiteMetadata from '../hooks/use-sitemetadata';
 import Footer from './footer';
 import Theme from '../contexts/theme';
 const Layout = ({ children }) => {
-  const { title, description } = useSiteMetadata();
-  const [themeval, setthemeval] = useState('');
+  const [themeval, setthemeval] = useState('dark');
   const [color, setcolor] = useState('white');
   const [textcolor, settextcolor] = useState('black');
   let currenturl = '';
@@ -24,10 +22,10 @@ const Layout = ({ children }) => {
   }, [themeval]);
   useEffect(() => {
     if (typeof window !== `undefined`) {
-      if (window.localStorage.getItem('color-mode') === 'dark') {
-        setColorMode('dark');
-      } else setColorMode('light');
-    } else setColorMode('light');
+      if (window.localStorage.getItem('color-mode') === 'light') {
+        setColorMode('light');
+      } else setColorMode('dark');
+    } else setColorMode('dark'); 
   }, []);
   const Twitter = () => (
     <svg
@@ -211,7 +209,7 @@ max-width:550px;
       />
       <Helmet>
         <html lang="en" />
-        
+  
         <script
           data-ad-client="ca-pub-3445418722858710"
           async
@@ -262,7 +260,6 @@ max-width:550px;
             >
               <span
                 onClick={() => {
-
                   document.execCommand('Copy');
                   if (typeof window !== `undefined`)
                     window.alert('URL: ' + currenturl + ' copied');

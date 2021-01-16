@@ -27,15 +27,7 @@ const About = () => {
       </Helmet>
 
       <Layout>
-        <p
-          css={css`
-            font-size: 0.7em;
-            color: gray;
-          `}
-        >
-          This is not supposed to be a portfolio website. All the details are
-          mentioned here until i finish working on the *Portfolio Site*.
-        </p>
+   
         <h1>
           About Me
           <span role="img" aria-label="student">

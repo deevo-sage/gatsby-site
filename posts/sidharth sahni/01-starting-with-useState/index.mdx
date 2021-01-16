@@ -10,7 +10,7 @@ type: post
 next: none
 prev: none
 ---
-import AniLink from "../../../src/components/read-link.js";
+import AniLink,{Styleda} from "../../../src/components/read-link.js";
 
 <div class="Mdxcontainer">
 
@@ -31,15 +31,10 @@ Get the code done till now <a href="https://github.com/deevo-sage/React-basics/t
 
 <br/>
 
-## Crux
-
-- making file and exporting
-- adding form 
-- adding state to form 
-
 ## Making a functional component in another file and exporting
 
-Let's just start with making a new file called form.js ,import React, and make a basic functional component.
+Let's just start with making a new file called form.js, import React and make a basic functional component.
+
 <br/>
 
 <div class="code-block">
@@ -58,9 +53,9 @@ return(<></>);
 
 <br/>
 
-I usually use template tag( <></> ) for initializing to avoid unnecessary divs
+I usually use something called a <Styleda href="https://reactjs.org/docs/fragments.html">React fragment</Styleda> ( ``` <></> ``` ) for initializing, to avoid unnecessary divs.
 
-We can export a component just like anyother function or object in Javascript aka by using export. So let's export the function at the end.
+We can export a component just like any other function or object in Javascript aka by using export. So let's export the function at the end.
 
 <br/>
 
@@ -82,7 +77,7 @@ export default Form;
 
 <br/>
 
-no lets import it in our index.js assuming the form.js is in same folder we can import with the following code
+Now let's import it in our index.js assuming the form.js is in the same folder we can import with the following code
 
 <br/>
 
@@ -101,11 +96,11 @@ import Form from "./form";
 
 ### What is state
 
-The heart of every React component is its “state”, an object that determines how that component renders & behaves. In other words, “state” is what allows you to create components that are dynamic and interactive by re-rendering the component everytime the "state" changes.
+The heart of every React component is its “state”, an object that determines how that component renders & behaves. In other words, “state” is what allows you to create components that are dynamic and interactive by re-rendering the component every time the "state" changes.
 
 ### What is useState()
 
-The useState() is a Hook that allows you to have state variables in functional components.it's syntax is 
+The useState() is a Hook that allows you to have state variables in functional components. its syntax is 
 
 <br/>
 
@@ -132,7 +127,7 @@ We'll make a simple login form with 2 input elements, 1 for email and 1 for pass
 ``` Javascript 
 
 const Form =()=>{
-  return(<>
+return(<>
 <input placeholder="email">
 </input>
 <input placeholder="password">
@@ -146,7 +141,7 @@ const Form =()=>{
 
 <br/>
 
-Now for adding state in a functional component we would need to import useState from react, so let's import and add a state named email in the component 
+Now for adding state in a functional component, we would need to import useState from react, so let's import and add a state named email in the component 
 
 
 <br/>
@@ -175,9 +170,9 @@ export default Form;
 
 <br/>
 
-now we also need to create an onChange function on email so that everytime something is added to the email input box vakue of our state also changes.
-**note that we make the type of variable is const as we should not be able to change state from anywhere other than the setemail function** 
+now we also need to create an onChange function on email so that every time something is added to the email input box value of our state also changes.
 
+**note that we make the type of variable const as we should not be able to change state from anywhere other than the setemail function** 
 
 <br/>
 
@@ -205,7 +200,6 @@ onChange={e=>setemail(e.target.value)}>
 
 lets repeat the steps for password as well.
 
-
 <br/>
 
 <div class="code-block">
@@ -213,10 +207,10 @@ lets repeat the steps for password as well.
 ``` Javascript 
 
 const Form =()=>{
-  const [email,setemail] = useState("");
-  const [password,setpassword] = useState("");
+const [email,setemail] = useState("");
+const [password,setpassword] = useState("");
 
-  return(<>
+return(<>
 <input placeholder="email" 
 value={email}
 onChange={e=>setemail(e.target.value)}>
@@ -234,14 +228,15 @@ onChange={e=>setpassword(e.target.value)}>
 
 <br/>
 
-now we can test the re-rendering by adding the a console.log anywhere inside the component. Lets add the log to show the current value of email and password.
+now we can test the re-rendering by adding a console.log anywhere inside the component. Let's add the log to show the current value of email and password.
 
 <br/>
 
 <div class="code-block">
 
 ``` Javascript 
-  return(<>
+
+return(<>
 {console.log({email,password})}
 <input placeholder="email" 
 value={email}
@@ -260,6 +255,6 @@ onChange={e=>setpassword(e.target.value)}>
 
 <br/>
 
-If you've followed correctly till now you've successfully created your first react app 🎉🎊🎉
+and that's it, we've learned how to use the useState function in React. In the video, I'll also be teaching on how to add a display form and hide form button so be sure to watch to the end and subscribe 
 
 </div>

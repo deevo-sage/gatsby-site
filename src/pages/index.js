@@ -3,7 +3,6 @@ import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import usePosts from '../hooks/use-posts';
 import PostPreview from '../components/post-preview';
-import Hero from '../components/hero';
 import { Tween } from 'react-gsap';
 import analytics from '../components/fireanalytics';
 import Helmet from 'react-helmet';
@@ -23,7 +22,6 @@ useEffect(() => {
         />
       </Helmet>
  
-      <Hero />
       <Layout>
         <h2
           css={css`

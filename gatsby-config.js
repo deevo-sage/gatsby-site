@@ -9,12 +9,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     `gatsby-plugin-transition-link`,
-    {
-      resolve: 'gatsby-source-instagram',
-      options: {
-        username: '6799361946',
-      },
-    },
+
 
     {
       resolve: 'gatsby-plugin-firebase',

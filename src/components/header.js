@@ -1,11 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Themecontext from '../contexts/theme';
 import Navbutton from './navbutton';
 import { Sun, Moon } from './svgs';
-
 
 const pages = [
   { name: 'Blogs', slug: '/' },
@@ -28,50 +27,57 @@ const Links = () => {
     </>
   );
 };
+const Sidenav = ({ menu }) => {
+  const [menuin, setmenuin] = useState(null);
 
-const Header = () => {
-  const [menu, setmenu] = useState(false);
-  const [theme, settheme] = useContext(Themecontext);
-
-  const Sidenav = () => (
+  useEffect(() => {
+    setmenuin(menu);
+  }, [menu]);
+  return (
+    <div
+      style={{ transition: '500ms' }}
+      className={`normal ${
+        menuin && menuin != null ? 'animation' :  'switch'
+      } `}
+    >
       <div
-        style={{ transition: '500ms' }}
-        className={`normal ${menu? 'animation':'switch'} `}
+        css={css`
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          width: 100%;
+          height: 100%;
+        `}
       >
         <div
           css={css`
             display: flex;
-            flex-direction: column;
             justify-content: flex-end;
             width: 100%;
+            height: 20px;
+            padding: 10px;
+          `}
+        ></div>
+        <nav
+          css={css`
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             height: 100%;
+            width: 100%;
           `}
         >
-          <div
-            css={css`
-              display: flex;
-              justify-content: flex-end;
-              width: 100%;
-              height: 20px;
-              padding: 10px;
-            `}
-          ></div>
-          <nav
-            css={css`
-              margin-top: 0;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100%;
-              width: 100%;
-            `}
-          >
-            <Links />
-          </nav>
-        </div>
+          <Links />
+        </nav>
       </div>
+    </div>
   );
+};
+const Header = () => {
+  const [menu, setmenu] = useState(false);
+  const [theme, settheme] = useContext(Themecontext);
 
   let ww;
   if (typeof window !== `undefined`) {
@@ -117,8 +123,8 @@ const Header = () => {
         @keyframes fadeout {
           from {
             opacity: 1;
-
-            }
+            visibility: visible;
+          }
           to {
             opacity: 0;
             visibility: hidden;
@@ -189,7 +195,7 @@ const Header = () => {
           </div>
         </nav>
       )}
-      <Sidenav />
+      <Sidenav menu={menu} />
     </header>
   );
 };

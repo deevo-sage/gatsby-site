@@ -86,8 +86,6 @@ const Header = () => {
   return (
     <header
       css={css`
-        position: fixed;
-        top: 0;
         z-index: 10;
         width: 100vw;
         background: #303633;
@@ -123,7 +121,7 @@ const Header = () => {
         @keyframes fadeout {
           from {
             opacity: 1;
-            visibility: visible;
+            visibility: hidden;
           }
           to {
             opacity: 0;

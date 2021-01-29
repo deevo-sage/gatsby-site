@@ -53,6 +53,8 @@ const Layout = ({ children }) => {
             box-sizing: border-box;
             margin: 0;
           }
+          body{
+          }
 .projectheader{
    width: 100%;
 
@@ -74,9 +76,11 @@ const Layout = ({ children }) => {
             font-size: 18px;
             line-height: 1.4;
             background:${color};
+
             /* remove margin for the main div that Gatsby mounts into */
             > div {
               margin-top: 0;
+
             }
           }
 
@@ -101,6 +105,9 @@ const Layout = ({ children }) => {
   :visited {
     color: #8b3e98;
   }
+}
+#___gatsby{
+  min-height:100vh;
 }
           strong {
             color:${textcolor};

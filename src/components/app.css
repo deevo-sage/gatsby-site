@@ -1,1 +1,29 @@
-   
+     @keyframes fadein {
+          from {
+            visibility: hidden;
+            opacity: 0;
+          }
+          to {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        @keyframes fadeout {
+          from {
+            opacity: 1;
+            visibility: hidden;
+          }
+          to {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+        .switch {
+          animation: fadeout 0.75s 1 ease-out;
+          animation-fill-mode: forwards;
+        }
+        .animation {
+          visibility: visible;
+          animation: fadein 0.75s 1;
+          animation-fill-mode: forwards;
+        }

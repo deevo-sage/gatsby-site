@@ -1,12 +1,14 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { css } from '@emotion/core';
 import ReadLink from './read-link';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Image from 'gatsby-image';
 
 const ProjectPreview = ({ post }) => {
+  
   return (
     <article
+    id="project-preview"
       css={css`
         padding-bottom: 1rem;
         display: flex;

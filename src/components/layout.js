@@ -4,7 +4,6 @@ import Header from './header';
 import Helmet from 'react-helmet';
 import Footer from './footer';
 import { Sun, Moon, Twitter } from './svgs';
-
 import Theme from '../contexts/theme';
 require('./app.css');
 const Layout = ({ children }) => {

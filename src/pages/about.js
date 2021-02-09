@@ -61,7 +61,7 @@ const About = () => {
               justify-content: space-around;
             }
             width: 100%;
-          `}
+          `} 
         >
           {' '}
           <Tween

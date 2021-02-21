@@ -212,7 +212,7 @@ const Header = () => {
         >
           <Button>
             <MyLink to="/" onClick={() => setmenu(!menu)}>
-              Home`1
+              Home
             </MyLink>
           </Button>
           <Button>

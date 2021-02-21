@@ -5,7 +5,11 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Themecontext from '../contexts/theme';
 import Navbutton from './navbutton';
 import { Sun, Moon } from './svgs';
-
+import { SwipeableDrawer, Button, Toolbar } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { Home } from '@material-ui/icons';
+const duration = 1;
 const pages = [
   { name: 'Blogs', slug: '/' },
   { name: 'About me', slug: '/about/' },
@@ -14,15 +18,17 @@ const Links = () => {
   return (
     <>
       {pages.map(item => (
-        <NavLink
-          cover
-          direction="up"
-          duration={1}
-          to={item.slug}
-          activeClassName="current-page"
-        >
-          {item.name}
-        </NavLink>
+        <Button>
+          <NavLink
+            cover
+            direction="up"
+            duration={duration}
+            to={item.slug}
+            activeClassName="current-page"
+          >
+            {item.name}
+          </NavLink>
+        </Button>
       ))}
     </>
   );
@@ -36,9 +42,7 @@ const Sidenav = ({ menu }) => {
   return (
     <div
       style={{ transition: '500ms' }}
-      className={`normal ${
-        menuin && menuin != null ? 'animation' :  'switch'
-      } `}
+      className={`normal ${menuin && menuin != null ? 'animation' : 'switch'} `}
     >
       <div
         css={css`
@@ -78,7 +82,13 @@ const Sidenav = ({ menu }) => {
 const Header = () => {
   const [menu, setmenu] = useState(false);
   const [theme, settheme] = useContext(Themecontext);
+  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
+  const tham = createMuiTheme({
+    palette: {
+      type: 'dark',
+    },
+  });
   let ww;
   if (typeof window !== `undefined`) {
     ww = window.innerWidth;
@@ -189,11 +199,47 @@ const Header = () => {
               setmenu(!menu);
             }}
           >
-            <Navbutton />
+            <Navbutton menu={menu} />
           </div>
         </nav>
       )}
-      <Sidenav menu={menu} />
+      {/* <Sidenav menu={menu} /> */}
+
+      <ThemeProvider theme={tham}>
+        <SwipeableDrawer
+          color="primary"
+          anchor="left"
+          disableBackdropTransition={!iOS}
+          disableDiscovery={iOS}
+          open={menu}
+          onOpen={() => setmenu(!menu)}
+          onClose={() => setmenu(!menu)}
+        >
+          <Button>
+            <NavLink
+              cover
+              direction="up"
+              duration={duration}
+              to="/"
+              onClick={() => setmenu(!menu)}
+            >
+              Home
+            </NavLink>
+          </Button>
+          <Button>
+            <NavLink
+              cover
+              direction="up"
+              duration={duration}
+              to="/about/"
+              style={{}}
+              onClick={() => setmenu(!menu)}
+            >
+              About me
+            </NavLink>
+          </Button>
+        </SwipeableDrawer>
+      </ThemeProvider>
     </header>
   );
 };
@@ -202,10 +248,8 @@ const NavLink = styled(AniLink)`
   color: white;
   font-size: 1rem;
   font-weight: ${props => props.fontWeight || 'normal'};
-  line-height: 1;
-  margin: 0 0.5rem 0 0;
-  padding: 0.25rem;
   text-decoration: none;
+  text-align: center;
 
   &.current-page {
     border-bottom: 2px solid white;

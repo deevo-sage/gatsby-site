@@ -145,12 +145,6 @@ max-width:550px;
       />
       <Helmet>
         <html lang="en" />
-
-        <script
-          data-ad-client="ca-pub-3445418722858710"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
       </Helmet>
       <Theme.Provider value={[themeval, setthemeval]}>
         <Header />

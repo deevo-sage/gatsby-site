@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { css } from "@emotion/core";
-const Navbutton = () => {
+import React, { useState } from 'react';
+import { css } from '@emotion/core';
+const Navbutton = ({ menu }) => {
   const [button, setbutton] = useState(false);
   return (
     <div
@@ -31,7 +31,7 @@ const Navbutton = () => {
         }
         .bar::after,
         .bar::before {
-          content: "";
+          content: '';
           position: absolute;
           width: 20px;
           height: 3px;
@@ -55,17 +55,14 @@ const Navbutton = () => {
         }
         .box.open .bar::before {
           transform: translate(20px) rotate(45deg);
-        } 
+        }
       `}
     >
       <div
-        className={`box ${button ? "open" : ""}`}
+        className={`box ${menu ? 'open' : ''}`}
         onClick={() => {
-          if (button) {
-            setbutton(false);
-          } else {
-            setbutton(true);
-          }
+          // setbutton(false);
+          // setbutton(true);
         }}
       >
         <div className="bar">

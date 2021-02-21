@@ -9,7 +9,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     `gatsby-plugin-transition-link`,
-
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-3445418722858710`,
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-firebase',

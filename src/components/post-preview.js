@@ -3,9 +3,9 @@ import { css } from '@emotion/core';
 import ReadLink from '../components/read-link';
 import Image from 'gatsby-image';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+const duration = 0.75;
 
 const PostPreview = ({ post }) => {
-  
   return (
     <article
       css={css`
@@ -23,9 +23,10 @@ const PostPreview = ({ post }) => {
       `}
     >
       <AniLink
-        cover
+        hex="#303633"
+        paintDrip
         direction="up"
-        duration={1}
+        duration={duration}
         to={post.slug}
         css={css`
           margin: 0 1rem 0 0;
@@ -78,22 +79,22 @@ const PostPreview = ({ post }) => {
           `}
         >
           <AniLink
-            cover
+            hex="#303633"
+            paintDrip
             direction="up"
-            duration={1}
+            duration={duration}
             to={post.slug}
-            
-            
             className="projectheader"
           >
             {post.title}
           </AniLink>
         </h4>
-        <ReadLink cover direction="up" duration={1} to={post.slug}>
+        <ReadLink paintDrip direction="up" duration={duration} to={post.slug}>
           read now &rarr;
         </ReadLink>
       </div>
     </article>
-  );}
+  );
+};
 
 export default PostPreview;

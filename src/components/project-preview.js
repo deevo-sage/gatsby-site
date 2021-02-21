@@ -1,14 +1,13 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { css } from '@emotion/core';
 import ReadLink from './read-link';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Image from 'gatsby-image';
-
+const duration = 0.75;
 const ProjectPreview = ({ post }) => {
-  
   return (
     <article
-    id="project-preview"
+      id="project-preview"
       css={css`
         padding-bottom: 1rem;
         display: flex;
@@ -24,9 +23,10 @@ const ProjectPreview = ({ post }) => {
       `}
     >
       <AniLink
-        cover
+        hex="#303633"
+        paintDrip
         direction="up"
-        duration={1}
+        duration={duration}
         to={'../' + post.slug}
         css={css`
           margin: 0 1rem 0 0;
@@ -83,21 +83,27 @@ const ProjectPreview = ({ post }) => {
           `}
         >
           <AniLink
-            cover
+            hex="#303633"
+            paintDrip
             direction="up"
-            duration={1}
+            duration={duration}
             to={'../' + post.slug}
-          
             className="projectheader"
           >
             {post.title}
           </AniLink>
         </h4>
-        <ReadLink cover direction="up" duration={1} to={'../' + post.slug}>
+        <ReadLink
+          paintDrip
+          direction="up"
+          duration={duration}
+          to={'../' + post.slug}
+        >
           read now &rarr;
         </ReadLink>
       </div>
     </article>
-  );}
+  );
+};
 
 export default ProjectPreview;

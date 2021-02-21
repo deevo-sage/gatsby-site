@@ -1,16 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
-import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Themecontext from '../contexts/theme';
 import Navbutton from './navbutton';
+import { MyLink } from './link';
 import { Sun, Moon } from './svgs';
 import { SwipeableDrawer, Button, Toolbar } from '@material-ui/core';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import { Home } from '@material-ui/icons';
-import zIndex from '@material-ui/core/styles/zIndex';
-const duration = 0.75;
 const pages = [
   { name: 'Blogs', slug: '/' },
   { name: 'About me', slug: '/about/' },
@@ -20,15 +16,9 @@ const Links = () => {
     <>
       {pages.map(item => (
         <Button>
-          <NavLink
-            cover
-            direction="up"
-            duration={duration}
-            to={item.slug}
-            activeClassName="current-page"
-          >
+          <MyLink to={item.slug} activeClassName="current-page">
             {item.name}
-          </NavLink>
+          </MyLink>
         </Button>
       ))}
     </>
@@ -150,9 +140,9 @@ const Header = () => {
         }
       `}
     >
-      <NavLink cover direction="up" duration={1} to="/" fontWeight="bold">
-        Justcausetech
-      </NavLink>
+      <MyLink to="/" fontWeight="bold">
+        <span style={{ fontWeight: 'bold' }}>Justcausetech</span>
+      </MyLink>
       {ww > 550 && (
         <nav
           css={css`
@@ -221,29 +211,14 @@ const Header = () => {
           classes={classes.drawer}
         >
           <Button>
-            <NavLink
-              paintDrip
-              direction="up"
-              hex="#303633"
-              duration={duration}
-              to="/"
-              onClick={() => setmenu(!menu)}
-            >
-              Home
-            </NavLink>
+            <MyLink to="/" onClick={() => setmenu(!menu)}>
+              Home`1
+            </MyLink>
           </Button>
           <Button>
-            <NavLink
-              hex="#303633"
-              paintDrip
-              direction="up"
-              duration={duration}
-              to="/about/"
-              style={{}}
-              onClick={() => setmenu(!menu)}
-            >
+            <MyLink to="/about/" onClick={() => setmenu(!menu)}>
               About me
-            </NavLink>
+            </MyLink>
           </Button>
         </SwipeableDrawer>
       </ThemeProvider>
@@ -256,18 +231,4 @@ const classes = makeStyles({
     zIndex: 10,
   },
 });
-const NavLink = styled(AniLink)`
-  color: white;
-  font-size: 1rem;
-  font-weight: ${props => props.fontWeight || 'normal'};
-  text-decoration: none;
-  text-align: center;
-  &.current-page {
-    border-bottom: 2px solid white;
-  }
-  &:last-of-type {
-    margin-right: 0;
-  }
-`;
-
 export default Header;

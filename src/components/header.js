@@ -6,10 +6,11 @@ import Themecontext from '../contexts/theme';
 import Navbutton from './navbutton';
 import { Sun, Moon } from './svgs';
 import { SwipeableDrawer, Button, Toolbar } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { Home } from '@material-ui/icons';
-const duration = 1;
+import zIndex from '@material-ui/core/styles/zIndex';
+const duration = 0.75;
 const pages = [
   { name: 'Blogs', slug: '/' },
   { name: 'About me', slug: '/about/' },
@@ -207,18 +208,23 @@ const Header = () => {
 
       <ThemeProvider theme={tham}>
         <SwipeableDrawer
+          zIndex="modal"
           color="primary"
-          anchor="left"
+          anchor="right"
           disableBackdropTransition={!iOS}
           disableDiscovery={iOS}
           open={menu}
           onOpen={() => setmenu(!menu)}
           onClose={() => setmenu(!menu)}
+          style={{ zIndex: 10 }}
+          className={classes.drawer}
+          classes={classes.drawer}
         >
           <Button>
             <NavLink
-              cover
+              paintDrip
               direction="up"
+              hex="#303633"
               duration={duration}
               to="/"
               onClick={() => setmenu(!menu)}
@@ -228,7 +234,8 @@ const Header = () => {
           </Button>
           <Button>
             <NavLink
-              cover
+              hex="#303633"
+              paintDrip
               direction="up"
               duration={duration}
               to="/about/"
@@ -243,18 +250,21 @@ const Header = () => {
     </header>
   );
 };
-
+const ani = 'paintdrip';
+const classes = makeStyles({
+  drawer: {
+    zIndex: 10,
+  },
+});
 const NavLink = styled(AniLink)`
   color: white;
   font-size: 1rem;
   font-weight: ${props => props.fontWeight || 'normal'};
   text-decoration: none;
   text-align: center;
-
   &.current-page {
     border-bottom: 2px solid white;
   }
-
   &:last-of-type {
     margin-right: 0;
   }

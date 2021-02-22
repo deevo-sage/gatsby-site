@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { css } from '@emotion/core';
 const Navbutton = ({ menu }) => {
-  const [button, setbutton] = useState(false);
   return (
     <div
       css={css`

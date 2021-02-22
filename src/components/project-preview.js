@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { css } from '@emotion/core';
 import ReadLink from './read-link';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';

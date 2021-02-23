@@ -71,7 +71,7 @@ const Sidenav = ({ menu }) => {
   );
 };
 const Header = () => {
-  const [menu, setmenu] = useState(false);
+  const [menu, setmenu] = useState(true);
   const [theme, settheme] = useContext(Themecontext);
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
@@ -210,6 +210,7 @@ const Header = () => {
           className={classes.drawer}
           classes={classes.drawer}
         >
+          <div style={{height:"45px"}}></div>
           <Button>
             <MyLink to="/" onClick={() => setmenu(!menu)}>
               Home

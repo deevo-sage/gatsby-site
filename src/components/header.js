@@ -71,7 +71,7 @@ const Sidenav = ({ menu }) => {
   );
 };
 const Header = () => {
-  const [menu, setmenu] = useState(true);
+  const [menu, setmenu] = useState(false);
   const [theme, settheme] = useContext(Themecontext);
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 

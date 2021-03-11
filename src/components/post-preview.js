@@ -27,7 +27,7 @@ const PostPreview = ({ post }) => {
         paintDrip
         direction="up"
         duration={duration}
-        to={post.slug}
+        to={"../" + post.slug}
         css={css`
           margin: 0 1rem 0 0;
           width: 100%;
@@ -83,17 +83,17 @@ const PostPreview = ({ post }) => {
             paintDrip
             direction="up"
             duration={duration}
-            to={post.slug}
+            to={"../" + post.slug}
             className="projectheader"
           >
             {post.title}
           </AniLink>
         </h4>
-        <ReadLink paintDrip direction="up" duration={duration} to={post.slug}>
+        <ReadLink paintDrip direction="up" duration={duration} to={"../" + post.slug}>
           read now &rarr;
         </ReadLink>
       </div>
-    </article>
+    </article >
   );
 };
 

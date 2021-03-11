@@ -152,7 +152,7 @@ max-width:550px;
           css={css`
             margin: 2rem auto;
             max-width: 800px;
-            min-height:80vh;
+            min-height: 80vh;
             @media only screen and (max-width: 550px) {
               padding-left: 4px;
               padding-right: 4px;

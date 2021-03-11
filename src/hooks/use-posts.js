@@ -5,7 +5,7 @@ const usePosts = () => {
     query {
       allMdx(
         limit: 12
-        sort: { fields: frontmatter___date, order: DESC }
+        sort: { fields: frontmatter___date, order: ASC }
         filter: { frontmatter: { type: { eq: "post" } } }
       ) {
         nodes {

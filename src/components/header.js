@@ -9,7 +9,7 @@ import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 const pages = [
   { name: 'Blogs', slug: '/' },
-  { name: 'About me', slug: '/about/' },
+  { name: 'React Basics', slug: '/React-Basics/' },
 ];
 const Links = () => {
   return (
@@ -140,8 +140,8 @@ const Header = () => {
         }
       `}
     >
-      <MyLink to="/" fontWeight="bold">
-        <span style={{ fontWeight: 'bold' }}>Justcausetech</span>
+      <MyLink to="/" fontWeight="600">
+        <span style={{ fontSize:'30px' }}>{"< "}Sid{" />"}</span>
       </MyLink>
       {ww > 550 && (
         <nav
@@ -213,12 +213,12 @@ const Header = () => {
           <div style={{height:"45px"}}></div>
           <Button>
             <MyLink to="/" onClick={() => setmenu(!menu)}>
-              Home
+              Portfolio
             </MyLink>
           </Button>
           <Button>
-            <MyLink to="/about/" onClick={() => setmenu(!menu)}>
-              About me
+            <MyLink to="/React-Basics/" onClick={() => setmenu(!menu)}>
+             React-basics
             </MyLink>
           </Button>
         </SwipeableDrawer>

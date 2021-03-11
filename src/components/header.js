@@ -8,7 +8,7 @@ import { SwipeableDrawer, Button, Toolbar } from '@material-ui/core';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 const pages = [
-  { name: 'Blogs', slug: '/' },
+  { name: 'Portfolio', slug: '/' },
   { name: 'React Basics', slug: '/React-Basics/' },
 ];
 const Links = () => {
@@ -141,7 +141,7 @@ const Header = () => {
       `}
     >
       <MyLink to="/" fontWeight="600">
-        <span style={{ fontSize:'30px' }}>{"< "}Sid{" />"}</span>
+        <span style={{ fontSize: '30px' }}>{"< "}Sid{" />"}</span>
       </MyLink>
       {ww > 550 && (
         <nav
@@ -210,7 +210,7 @@ const Header = () => {
           className={classes.drawer}
           classes={classes.drawer}
         >
-          <div style={{height:"45px"}}></div>
+          <div style={{ height: "45px" }}></div>
           <Button>
             <MyLink to="/" onClick={() => setmenu(!menu)}>
               Portfolio
@@ -218,7 +218,7 @@ const Header = () => {
           </Button>
           <Button>
             <MyLink to="/React-Basics/" onClick={() => setmenu(!menu)}>
-             React-basics
+              React basics
             </MyLink>
           </Button>
         </SwipeableDrawer>

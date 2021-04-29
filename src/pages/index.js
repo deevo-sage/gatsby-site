@@ -23,11 +23,11 @@ const About = () => {
           React and React-native for the front-end and Firebase for the backend.
           Currently, I'm a second Year student at Bhagwan Parshuram Institute of Technology
         while also learning and working with various new frameworks and
-        technologies in my free time." />
+        technologies in my free time."
+        />
       </Helmet>
 
       <Layout>
-   
         <h1>
           About Me
           <span role="img" aria-label="student">
@@ -35,10 +35,11 @@ const About = () => {
           </span>
         </h1>
         <p>
-          I'm Sidharth Sahni, a self-taught web and app developer working with
-          React and React-native for the front-end and Firebase for the backend.
-          Currently, I'm a second Year student at{' '}
-          <Styleda
+          I’m Sidharth Sahni, a 2nd Year Btech IT student who's just too
+          passionate about learning & building stuff. I usually work with MERN
+          stack or React + Firebase but i surely do love to work on stuff I've
+          never worked on before as it is the best oppurtunity to learn.
+          {/* <Styleda
             href="http://bpitindia.com/"
             css={css`
               text-decoration: none;
@@ -47,7 +48,7 @@ const About = () => {
             Bhagwan Parshuram Institute of Technology
           </Styleda>{' '}
           while also learning and working with various new frameworks and
-          technologies in my free time.
+          technologies in my free time. */}
         </p>
 
         <h1>My Past Projects</h1>
@@ -61,7 +62,7 @@ const About = () => {
               justify-content: space-around;
             }
             width: 100%;
-          `} 
+          `}
         >
           {' '}
           <Tween
@@ -77,7 +78,6 @@ const About = () => {
                   padding: 0;
                   min-height: 250px;
                   width: 30%;
-
                   margin-top: 0.5rem;
                   margin-bottom: 0.5rem;
                   @media only screen and (min-width: 550px) {
@@ -97,9 +97,6 @@ const About = () => {
           </Tween>
         </div>
         <br />
-        <ReadLink cover direction="up" duration={1} to="/">
-          &larr; back to home
-        </ReadLink>
       </Layout>
     </>
   );

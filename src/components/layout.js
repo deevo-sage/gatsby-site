@@ -229,7 +229,7 @@ max-width:550px;
                   else setColorMode('dark');
                 }}
               >
-                {themeval === 'dark' ? <Sun /> : <Moon />}
+                {themeval === 'dark' ? <Sun /> : <Moon color={'#303633'} />}
               </span>
             </div>
           </aside>

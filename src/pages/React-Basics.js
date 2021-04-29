@@ -30,11 +30,13 @@ export default () => {
           `}
         >
           {' '}
-          <span role="img" aria-label="upsidedownface">
-            
-          </span>{' '}
-React Basics{' '}
-          <img src="https://github.com/devicons/devicon/raw/master/icons/react/react-original.svg" alt="react" width="24" height="24" />
+          <span role="img" aria-label="upsidedownface"></span> React Basics{' '}
+          <img
+            src="https://github.com/devicons/devicon/raw/master/icons/react/react-original.svg"
+            alt="react"
+            width="24"
+            height="24"
+          />
         </h2>
         <div
           css={css`

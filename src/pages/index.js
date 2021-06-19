@@ -19,11 +19,10 @@ const About = () => {
         <title>About me</title>
         <meta
           name="description"
-          content="  I'm Sidharth Sahni, a self-taught web and app developer working with
-          React and React-native for the front-end and Firebase for the backend.
-          Currently, I'm a second Year student at Bhagwan Parshuram Institute of Technology
-        while also learning and working with various new frameworks and
-        technologies in my free time."
+          content="I’m Sidharth Sahni, a 2nd Year Btech IT student who's just
+          passionate about learning & building stuff. I usually work with GraphQL + Mongo + React
+          but i also do with MERN stack.I absolutely love to work on frameworks that I've
+          never worked with before as it is the best oppurtunity to learn."
         />
       </Helmet>
 
@@ -35,10 +34,11 @@ const About = () => {
           </span>
         </h1>
         <p>
-          I’m Sidharth Sahni, a 2nd Year Btech IT student who's just too
-          passionate about learning & building stuff. I usually work with MERN
-          stack or React + Firebase but i surely do love to work on stuff I've
-          never worked on before as it is the best oppurtunity to learn.
+          I’m Sidharth Sahni, a 2nd Year Btech IT student who's just passionate
+          about learning & building stuff. I usually work with GraphQL + Mongo +
+          React but i also do with MERN stack.I absolutely love to work on
+          frameworks that I've never worked with before as it is the best
+          oppurtunity to learn.
           {/* <Styleda
             href="http://bpitindia.com/"
             css={css`

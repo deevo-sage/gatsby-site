@@ -7,26 +7,25 @@ import analytics from '../components/fireanalytics';
 import Helmet from 'react-helmet';
 
 export const query = graphql`
-         query($slug: String!) {
-           mdx(frontmatter: { slug: { eq: $slug } }) {
-             frontmatter {
-               title
-               author
-               link
-               description
-             }
-             body
-           }
-         }
-       `;
+  query($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        author
+        link
+        description
+      }
+      body
+    }
+  }
+`;
 
 const ProjectTemplate = ({ data: { mdx: post } }) => {
   useEffect(() => {
-    analytics('visited_'+post.frontmatter.title);
-  },);
+    analytics('visited_' + post.frontmatter.title);
+  });
   return (
     <>
-      
       <Helmet>
         <html lang="en" />
         <title>{post.frontmatter.title}</title>
@@ -53,7 +52,7 @@ const ProjectTemplate = ({ data: { mdx: post } }) => {
       </Styleda> */}
         <MDXRenderer>{post.body}</MDXRenderer>
 
-        <ReadLink cover direction="up" duration={1} to="/about/">
+        <ReadLink cover direction="up" duration={1} to="/">
           &larr; back to about
         </ReadLink>
       </Layout>

@@ -4,7 +4,6 @@ const useProjects = () => {
   const data = useStaticQuery(graphql`
     query {
       allMdx(
-        limit: 12
         sort: { fields: frontmatter___date, order: DESC }
         filter: { frontmatter: { type: { eq: "project" } } }
       ) {

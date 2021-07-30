@@ -15,7 +15,7 @@ const ProjectPreview = ({ post }) => {
         width: 100%;
         height: 100%;
         min-height: 250px;
-        box-shadow: 4px 4px 6px #000000;
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.35);
         padding-top: 0;
         @media only screen and (min-width: 550px) {
           margin-right: 3.3%;

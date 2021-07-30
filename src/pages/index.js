@@ -3,10 +3,10 @@ import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import useProjects from '../hooks/use-projects';
 import ProjectPreview from '../components/project-preview';
-import ReadLink, { Styleda } from '../components/read-link';
-import { Tween } from 'react-gsap';
 import analytics from '../components/fireanalytics';
 import Helmet from 'react-helmet';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const About = () => {
   useEffect(() => {
@@ -25,7 +25,6 @@ const About = () => {
           never worked with before as it is the best oppurtunity to learn."
         />
       </Helmet>
-
       <Layout>
         <h1>
           About Me
@@ -65,41 +64,65 @@ const About = () => {
           `}
         >
           {' '}
-          <Tween
-            from={{ x: '100px', y: '100px', opacity: 0 }}
-            duration={0.7}
-            stagger={0.3}
-            playState="true"
-          >
-            {projects.map(project => (
-              <div
-                css={css`
-                  margin: 0;
-                  padding: 0;
-                  min-height: 250px;
-                  width: 30%;
-                  margin-top: 0.5rem;
-                  margin-bottom: 0.5rem;
-                  @media only screen and (min-width: 550px) {
-                    margin-right: 3.3%;
-                  }
-                  @media only screen and (max-width: 550px) {
-                    min-height: 33vh;
-                    width: 80%;
-                    box-shadow: 2.75px 2.75px 6px #000000;
-                  }
-                `}
-                key={project.slug}
-              >
-                <ProjectPreview post={project} />
-              </div>
-            ))}
-          </Tween>
+          {projects.map(project => (
+            <Pview key={project.slug} project={project} />
+          ))}
         </div>
         <br />
       </Layout>
     </>
   );
 };
-
+export const popout = {
+  hidden: {
+    opacity: 0,
+    x: '100px',
+    y: '100px',
+  },
+  visible: {
+    x: 0,
+    y: 0,
+    opacity: [0, 1],
+  },
+};
+const Pview = ({ project }) => {
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
+  return (
+    <div
+      ref={ref}
+      css={css`
+        margin: 0;
+        padding: 0;
+        min-height: 250px;
+        width: 30%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        @media only screen and (min-width: 550px) {
+          margin-right: 3.3%;
+        }
+        @media only screen and (max-width: 550px) {
+          min-height: 33vh;
+          width: 80%;
+          box-shadow: 2.75px 2.75px 6px #000000;
+        }
+      `}
+    >
+      {inView ? (
+        <motion.div
+          transition={{
+            duration: 0.4,
+          }}
+          initial="hidden"
+          animate="visible"
+          variants={popout}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <ProjectPreview post={project} />
+        </motion.div>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
 export default About;

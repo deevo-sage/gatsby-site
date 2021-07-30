@@ -15,7 +15,7 @@ const PostPreview = ({ post }) => {
         width: 100%;
         height: 100%;
         min-height: 250px;
-        box-shadow: 4px 4px 6px #000000;
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.35);
         padding-top: 0;
         @media only screen and (min-width: 550px) {
           margin-right: 3.3%;
@@ -27,7 +27,7 @@ const PostPreview = ({ post }) => {
         paintDrip
         direction="up"
         duration={duration}
-        to={"../" + post.slug}
+        to={'../' + post.slug}
         css={css`
           margin: 0 1rem 0 0;
           width: 100%;
@@ -83,17 +83,22 @@ const PostPreview = ({ post }) => {
             paintDrip
             direction="up"
             duration={duration}
-            to={"../" + post.slug}
+            to={'../' + post.slug}
             className="projectheader"
           >
             {post.title}
           </AniLink>
         </h4>
-        <ReadLink paintDrip direction="up" duration={duration} to={"../" + post.slug}>
+        <ReadLink
+          paintDrip
+          direction="up"
+          duration={duration}
+          to={'../' + post.slug}
+        >
           read now &rarr;
         </ReadLink>
       </div>
-    </article >
+    </article>
   );
 };
 

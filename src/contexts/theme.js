@@ -1,4 +1,4 @@
-import {createContext} from "react"
+import { createContext } from 'react';
 
-const Theme = createContext(["light",()=>{}])
+const Theme = createContext(['dark', () => {}]);
 export default Theme;

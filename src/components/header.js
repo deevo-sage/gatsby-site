@@ -7,7 +7,10 @@ import { Sun, Moon } from './svgs';
 import { SwipeableDrawer, Button, Toolbar } from '@material-ui/core';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-const pages = [{ name: 'Portfolio', slug: '/' }];
+const pages = [
+  { name: 'Portfolio', slug: '/' },
+  { name: 'React Basics', slug: '/React-Basics/' },
+];
 const Links = () => {
   return (
     <>

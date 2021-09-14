@@ -51,7 +51,6 @@
     "react-intersection-observer": "^8.32.0",
     "react-particles-js": "^3.5.1",
     "react-tsparticles": "^1.30.0",
-    "tsc": "^1.20150623.0",
     "tsparticles": "^1.30.0"
   },
   "devDependencies": {

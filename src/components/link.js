@@ -1,6 +1,6 @@
 import React from 'react';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/base';
 const NavLink = styled(AniLink)`
   color: white;
   font-size: 1rem;

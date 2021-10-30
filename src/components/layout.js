@@ -5,7 +5,6 @@ import Helmet from 'react-helmet';
 import Footer from './footer';
 import { Sun, Moon, Twitter } from './svgs';
 import Theme from '../contexts/theme';
-require('./app.css');
 const Layout = ({ children }) => {
   const [themeval, setthemeval] = useState('dark');
   const [color, setcolor] = useState('white');
@@ -52,8 +51,7 @@ const Layout = ({ children }) => {
             box-sizing: border-box;
             margin: 0;
           }
-          body{
-          }
+        
 .projectheader{
    width: 100%;
 
@@ -68,13 +66,13 @@ const Layout = ({ children }) => {
           html,
           body {
             margin: 0;
-            color: ${textcolor};
+            color: ${textcolor} !important;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
               Helvetica, Arial, sans-serif, 'Apple Color Emoji',
               'Segoe UI Emoji', 'Segoe UI Symbol';
             font-size: 18px;
             line-height: 1.4;
-            background:${color};
+            background:${color} !important;
 
             /* remove margin for the main div that Gatsby mounts into */
             > div {

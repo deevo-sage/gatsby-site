@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled/base';
+import styled from '@emotion/styled';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 const ReadLinka = styled(AniLink)`

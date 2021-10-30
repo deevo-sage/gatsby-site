@@ -4,6 +4,7 @@ module.exports = {
     description: 'This a blogspot built and managed by sidharth sahni.',
   },
   plugins: [
+    '@chakra-ui/gatsby-plugin',
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
@@ -63,7 +64,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `static/favicon.png`,
+        icon: `static/favicon.ico`,
       },
     },
 

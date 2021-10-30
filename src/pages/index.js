@@ -7,6 +7,7 @@ import analytics from '../components/fireanalytics';
 import Helmet from 'react-helmet';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Text } from '@chakra-ui/layout';
 
 const About = () => {
   useEffect(() => {
@@ -24,14 +25,15 @@ const About = () => {
           but i also do with MERN stack.I absolutely love to work on frameworks that I've
           never worked with before as it is the best oppurtunity to learn."
         />
+        <link rel="icon" type="image/png" href="static/favicon.ico"></link>
       </Helmet>
       <Layout>
-        <h1>
+        <Text fontSize="xl" fontWeight="bold">
           About Me
           <span role="img" aria-label="student">
             👨‍🎓
           </span>
-        </h1>
+        </Text>
         <p>
           I’m Sidharth Sahni, a 2nd Year Btech IT student who's just passionate
           about learning & building stuff. I usually work with GraphQL + Mongo +

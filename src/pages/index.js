@@ -25,7 +25,7 @@ const About = () => {
           but i also do with MERN stack.I absolutely love to work on frameworks that I've
           never worked with before as it is the best oppurtunity to learn."
         />
-        <link rel="icon" type="image/png" href="static/favicon.ico"></link>
+        <link rel="icon" type="image/ico" href="../favicon.ico"></link>
       </Helmet>
       <Layout>
         <Text fontSize="xl" fontWeight="bold">

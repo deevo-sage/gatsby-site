@@ -28,10 +28,14 @@ const About = () => {
         <meta property="og:title" content="Hi I'm Sidharth Sahni" />
         <meta property="og:type" content="About me" />
         <meta property="og:url" content="https://www.sidharthsahni.com/" />
-        <meta property="og:image" content="../favicon.png" />
-        <meta property="og:logo" content="../favicon.png" />
-
-        <link rel="icon" type="image/png" href="../favicon.png"></link>
+        <meta
+          property="og:image"
+          content="https://www.sidharthsahni.com/favicon-32x32.png?v=d922bd745192bd654add1128cb14327f"
+        />
+        <meta
+          property="og:logo"
+          content="https://www.sidharthsahni.com/favicon-32x32.png?v=d922bd745192bd654add1128cb14327f"
+        />
       </Helmet>
       <Layout>
         <Text fontSize="xl" fontWeight="bold">

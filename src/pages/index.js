@@ -14,6 +14,7 @@ const About = () => {
     analytics('visited_about_us');
   }, []);
   const projects = useProjects();
+  console.log(window.location.pathname);
   return (
     <>
       <Helmet>
@@ -30,12 +31,12 @@ const About = () => {
         <meta property="og:url" content="https://www.sidharthsahni.com/" />
         <meta
           property="og:image"
-          content="https://www.sidharthsahni.com/favicon-32x32.png?v=d922bd745192bd654add1128cb14327f"
+          content={' https://www.sidharthsahni.com/logo.png'}
         />
         <meta
           property="og:logo"
-          content="https://www.sidharthsahni.com/favicon-32x32.png?v=d922bd745192bd654add1128cb14327f"
-        />
+          content={'https://www.sidharthsahni.com/logo.png'}
+        ></meta>
       </Helmet>
       <Layout>
         <Text fontSize="xl" fontWeight="bold">

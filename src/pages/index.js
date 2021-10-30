@@ -29,6 +29,8 @@ const About = () => {
         <meta property="og:type" content="About me" />
         <meta property="og:url" content="https://www.sidharthsahni.com/" />
         <meta property="og:image" content="../favicon.ico" />
+        <meta property="og:logo" content="../favicon.ico" />
+
         <link rel="icon" type="image/ico" href="../favicon.ico"></link>
       </Helmet>
       <Layout>

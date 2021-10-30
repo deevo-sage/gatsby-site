@@ -25,6 +25,10 @@ const About = () => {
           but i also do with MERN stack.I absolutely love to work on frameworks that I've
           never worked with before as it is the best oppurtunity to learn."
         />
+        <meta property="og:title" content="Hi I'm Sidharth Sahni" />
+        <meta property="og:type" content="About me" />
+        <meta property="og:url" content="https://www.sidharthsahni.com/" />
+        <meta property="og:image" content="../favicon.ico" />
         <link rel="icon" type="image/ico" href="../favicon.ico"></link>
       </Helmet>
       <Layout>

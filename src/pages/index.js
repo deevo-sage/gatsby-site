@@ -14,29 +14,45 @@ const About = () => {
     analytics('visited_about_us');
   }, []);
   const projects = useProjects();
-  console.log(window.location.pathname);
+
   return (
     <>
       <Helmet>
-        <title>About me</title>
+        <title>Hi, I'm Sidharth Sahni </title>
+        <meta name="title" content="Hi, I'm Sidharth Sahni" />
         <meta
           name="description"
-          content="I’m Sidharth Sahni, a 2nd Year Btech IT student who's just
-          passionate about learning & building stuff. I usually work with GraphQL + Mongo + React
-          but i also do with MERN stack.I absolutely love to work on frameworks that I've
-          never worked with before as it is the best oppurtunity to learn."
+          content="
+Hey everyone, this is just a blog site that i built to learn Gatsby.js and people confuse it wih a portfolio(I don't have one...OK I'll make 1 soon OwO)
+index, follow"
         />
-        <meta property="og:title" content="Hi I'm Sidharth Sahni" />
-        <meta property="og:type" content="About me" />
-        <meta property="og:url" content="https://www.sidharthsahni.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sidharthsahni.com/" />
+        <meta property="og:title" content="Hi, I'm Sidharth Sahni " />
+        <meta
+          property="og:description"
+          content="
+Hey everyone, this is just a blog site that i built to learn Gatsby.js and people confuse it wih a portfolio(I don't have one...OK I'll make 1 soon OwO)
+index, follow"
+        />
         <meta
           property="og:image"
-          content={' https://www.sidharthsahni.com/logo.png'}
+          content="https://firebasestorage.googleapis.com/v0/b/gastby-blog.appspot.com/o/sidharth%2FmetaImages%2F1612073750851.jfif?alt=media&token=91b64419-fc24-4758-a206-9af4ff2b5056"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:title" content="Hi, I'm Sidharth Sahni " />
+        <meta
+          property="twitter:description"
+          content="
+Hey everyone, this is just a blog site that i built to learn Gatsby.js and people confuse it wih a portfolio(I don't have one...OK I'll make 1 soon OwO)
+index, follow"
         />
         <meta
-          property="og:logo"
-          content={'https://www.sidharthsahni.com/logo.png'}
-        ></meta>
+          property="twitter:image"
+          content="https://firebasestorage.googleapis.com/v0/b/gastby-blog.appspot.com/o/sidharth%2FmetaImages%2F1612073750851.jfif?alt=media&token=91b64419-fc24-4758-a206-9af4ff2b5056"
+        />
       </Helmet>
       <Layout>
         <Text fontSize="xl" fontWeight="bold">

@@ -24,7 +24,7 @@ const About = () => {
           name="description"
           content="
 Hey everyone, this is just a blog site that i built to learn Gatsby.js and people confuse it wih a portfolio(I don't have one...OK I'll make 1 soon OwO)
-index, follow"
+"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sidharthsahni.com/" />
@@ -33,7 +33,7 @@ index, follow"
           property="og:description"
           content="
 Hey everyone, this is just a blog site that i built to learn Gatsby.js and people confuse it wih a portfolio(I don't have one...OK I'll make 1 soon OwO)
-index, follow"
+"
         />
         <meta
           property="og:image"
@@ -47,7 +47,7 @@ index, follow"
           property="twitter:description"
           content="
 Hey everyone, this is just a blog site that i built to learn Gatsby.js and people confuse it wih a portfolio(I don't have one...OK I'll make 1 soon OwO)
-index, follow"
+"
         />
         <meta
           property="twitter:image"
